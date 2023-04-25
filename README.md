@@ -1,4 +1,4 @@
-# Proyecto 1, 2 y 3: Cristian Ionut Olteanu
+# pequeño proyecto con lit.
 ## Imagenes del proyecto levantado
 ### Login
 ![Login screen](./img/login.png)
