@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + TS</title>
+    
+<link rel="stylesheet" href="./src/style.css">
+    <script type="module">
+      import './src/App.ts'
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      
+      <!-- 
+        <presentation-card name="Cristian Ionut Olteanu" photo="http://www.agbrands.com.ar/wp-content/uploads/2017/01/perfil.jpg" skills="Me gusta compartir lo que se y encontrar nuevas/mejores formas de hacer las cosas." hobbies="Programación, Anime, Videojuegos, Musica..." stack="React" age="24" occupation="Frontend Dev."></presentation-card>
+        <presentation-card-lit name="Cristian Ionut Olteanu" photo="http://www.agbrands.com.ar/wp-content/uploads/2017/01/perfil.jpg" skills="Me gusta compartir lo que se y encontrar nuevas/mejores formas de hacer las cosas." hobbies="Programación, Anime, Videojuegos, Musica..." stack="React" age="24" occupation="Frontend Dev."></presentation-card> 
+      -->
+      <lit-app></lit-app>
+      <script type="text/javascript">
+        window.addEventListener('popstate', (event) => {
+          const popstateEvent = new CustomEvent('popstate', { detail: {path: event.target.location.pathname} })
+          const litApp =  document.querySelector('lit-app')
+          const router = litApp.shadowRoot.querySelector('my-router')
+          router.dispatchEvent(popstateEvent);  
+        })
+
+        window.addEventListener('go-to-window', (event) => {
+          const popstateEvent = new CustomEvent('go-to', event)
+          const litApp =  document.querySelector('lit-app')
+          const router = litApp.shadowRoot.querySelector('my-router')
+          router.dispatchEvent(popstateEvent);  
+        })
+      </script>
+    </div>
+  </body>
+</html>
